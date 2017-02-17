@@ -42,7 +42,7 @@ var LinkFormView = Backbone.View.extend({
 
 var LinkListView = Backbone.View.extend({
   tagName: 'ul',
-  className: 'list-group col-md-6',
+  className: 'list-group link-list col-md-6',
   initialize: function(){
     this.listenTo(this.collection, 'add', this.addLink);
   },
@@ -50,8 +50,21 @@ var LinkListView = Backbone.View.extend({
     return this;
   },
   addLink: function(link){
+    console.log('link', link);
     var linkItem = new LinkView({model: link});
     this.$el.append(linkItem.render().el);
+  },
+  showFilter: function(tag){
+    var filteredData = this.collection.where({tag: tag});
+    $('.link-list').html('');
+    filteredData.forEach(this.renderCategory, this);
+    // return this;
+  },
+  renderCategory: function(link){
+    console.log('link2', link);
+    var linkItem = new LinkView({model: link});
+    console.log('linkItem', linkItem);
+    $('.link-list').append(linkItem.render().$el);
   }
 });
 
@@ -86,7 +99,6 @@ var TagListView = Backbone.View.extend({
       return item.toJSON().tag;
     }));
 
-    console.log(tagItem);
     this.$el.html(tagTemplate({tagItem:tagItem}));
 
     // var self = this;

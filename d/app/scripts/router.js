@@ -6,7 +6,8 @@ var views = require('./views/linkViews.js');
 
 var LinkRouter = Backbone.Router.extend({
   routes: {
-    '': 'index'
+    '': 'index',
+    'category/:tag': 'category'
   },
   initialize: function(){
     this.linkList = new models.LinkCollection();
@@ -24,6 +25,11 @@ var LinkRouter = Backbone.Router.extend({
 
     this.linkList.fetch();
   },
+  category: function(tag){
+
+    var seeLinks = new views.LinkListView({collection: this.linkList});
+    seeLinks.showFilter(tag);
+  }
 });
 
 var myLinkRouter = new LinkRouter();

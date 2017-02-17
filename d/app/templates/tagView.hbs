@@ -1,5 +1,9 @@
 <div class="tag-wrapper">
   {{#each tagItem}}
-  <li class="{{ this }}"><button class="{{ this }}">{{ this }}</button></li>
+  <li id="sort-tag" class="{{ this }}">
+    <a href="#category/{{ this }}">
+      <button  class="{{ this }}">{{ this }}</button>
+    </a>
+  </li>
   {{/each}}
 </div>
