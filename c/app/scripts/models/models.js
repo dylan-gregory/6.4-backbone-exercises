@@ -1,16 +1,16 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
 
-var Book = Backbone.Model.extend({
+var Blog = Backbone.Model.extend({
   idAttribute: "_id"
 });
 
-var BookCollection = Backbone.Collection.extend({
-  model: Book,
-  url: 'https://tiny-lasagna-server.herokuapp.com/collections/book'
+var BlogCollection = Backbone.Collection.extend({
+  model: Blog,
+  url: 'https://tiny-lasagna-server.herokuapp.com/collections/blogposts'
 });
 
 module.exports = {
-  Book: Book,
-  BookCollection: BookCollection
+  Blog: Blog,
+  BlogCollection: BlogCollection
 };

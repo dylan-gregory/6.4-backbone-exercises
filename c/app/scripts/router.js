@@ -2,29 +2,29 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 
 var models = require('./models/models.js');
-var views = require('./views/bookViews.js');
+var views = require('./views/blogViews.js');
 
-var BookRouter = Backbone.Router.extend({
+var BlogRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
-    'book/:id/': 'readBook'
+    'blog/:id/': 'readBlog'
   },
   initialize: function(){
-    this.bookList = new models.BookCollection();
+    this.blogList = new models.BlogCollection();
   },
   index: function(){
-    var seeBooks = new views.BookListView({collection: this.bookList});
-    console.log(this.bookList);
-    $('.app').html(seeBooks.render().el);
-    this.bookList.fetch();
+    var seeBlogs = new views.BlogListView({collection: this.blogList});
+    console.log(this.blogList);
+    $('.app').html(seeBlogs.render().el);
+    this.blogList.fetch();
   },
-  readBook: function(id){
-    var currentBook = this.bookList.findWhere({'_id': id});
-    var bookDeets = new views.BookDeetsView({model: currentBook});
-    $('.app').html(bookDeets.render().el);
+  readBlog: function(id){
+    var currentBlog = this.blogList.findWhere({'_id': id});
+    var blogDeets = new views.BlogDeetsView({model: currentBlog});
+    $('.app').html(blogDeets.render().el);
   }
 });
 
-var myRouter = new BookRouter();
+var myRouter = new BlogRouter();
 
 module.exports = myRouter;
