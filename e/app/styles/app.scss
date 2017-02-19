@@ -15,3 +15,81 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 img {
   max-width: 100%;
 }
+
+body{
+  font-family: "Helvetica", sans-serif;
+  background-color: #0A3E37;
+}
+
+.list-group-item{
+  font-size: 18px;
+}
+
+.banner{
+  background-color: #4D988E;
+  color: white;
+}
+.delete-btn{
+  float: right;
+}
+
+#blog-post-form{
+  background-color: #FFE09A;
+}
+
+input{
+  margin-bottom: 10px;
+}
+
+textarea{
+  margin-bottom: 10px;
+}
+
+.submit-btn{
+  background-color: #AA7039;
+  color: white;
+}
+
+.blog-deets-wrapper{
+
+  h2{
+    margin-top: 0px;
+  }
+}
+li{
+
+  a{
+    text-decoration: none;
+    color: #0A3E37;
+  }
+}
+
+.blog-list-head{
+  background-color: #4D988E;
+}
+
+.right-bar > .well{
+  color: white;
+  padding-top: 0px;
+  padding-bottom: 5px;
+
+  h3{
+    margin-top: 10px;
+  }
+}
+
+.fa-caret-down{
+  margin-right: 8px;
+}
+
+.fa-angle-double-right{
+  margin-right: 8px;
+}
+
+.blog-select-item{
+  vertical-align: middle;
+}
+
+.fa-user-circle{
+  margin-right: 12px;
+}

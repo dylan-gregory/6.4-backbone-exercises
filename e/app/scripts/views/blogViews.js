@@ -47,7 +47,7 @@ var BlogListView = Backbone.View.extend({
 
 var BlogView = Backbone.View.extend({
   tagName: 'li',
-  className: 'list-group-item',
+  className: 'list-group-item clearfix',
   template: blogTemplate,
   events: {
     'click .delete-btn': 'delete'
